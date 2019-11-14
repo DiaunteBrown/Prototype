@@ -38,8 +38,11 @@ public class Panel extends JPanel implements KeyListener {
 		g.setColor(Color.MAGENTA);
 		g.drawImage(new ImageIcon("src/pictures/character.png").getImage(), 300, 300, 200, 200, null);
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 36)); 
-		g.drawString("Hello World", 300, 300);
-		g.drawOval(200, 600, 400, 25);
+		g.drawString("Fidgy-Rubiks", 910, 100);
+		
+		
+		
+		
 	}
 	
 	@Override
