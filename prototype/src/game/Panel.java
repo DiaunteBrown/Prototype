@@ -36,10 +36,13 @@ public class Panel extends JPanel implements KeyListener {
 	
 	public void drawSplashPage(Graphics g) {
 		g.setColor(Color.MAGENTA);
-		g.drawImage(new ImageIcon("src/pictures/character.png").getImage(), 300, 300, 200, 200, null);
-		g.setFont(new Font("TimesRoman", Font.PLAIN, 36)); 
-		g.drawString("Fidgy-Rubiks", 910, 100);
+		//Title Screen//
 		
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 90)); 
+		g.drawString("Fidgy-Rubiks", 150, 100);
+		g.drawRect(350, 150, 150, 20);
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 20)); 
+		g.drawString("Loading",200,100);
 		
 		
 		
