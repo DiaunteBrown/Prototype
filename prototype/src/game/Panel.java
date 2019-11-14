@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
@@ -33,12 +34,20 @@ public class Panel extends JPanel implements KeyListener {
 		repaint();
 	}
 	
+	public void drawSplashPage(Graphics g) {
+		g.setColor(Color.MAGENTA);
+		g.drawImage(new ImageIcon("src/pictures/character.png").getImage(), 300, 300, 200, 200, null);
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 36)); 
+		g.drawString("Hello World", 300, 300);
+		g.drawOval(200, 600, 400, 25);
+	}
 	
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.setColor(Color.MAGENTA);
-		g.drawImage(new ImageIcon("src/pictures/character.png").getImage(), 100, 100, null);
+		
+		drawSplashPage(g);
+
 	}
 
 	@Override
