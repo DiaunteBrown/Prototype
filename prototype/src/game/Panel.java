@@ -38,11 +38,15 @@ public class Panel extends JPanel implements KeyListener {
 		g.setColor(Color.MAGENTA);
 		//Title Screen//
 		
+		g.setColor(Color.red);
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 90)); 
-		g.drawString("Fidgy-Rubiks", 150, 100);
-		g.drawRect(350, 150, 150, 20);
-		g.setFont(new Font("TimesRoman", Font.PLAIN, 20)); 
-		g.drawString("Loading",200,100);
+		//Title//
+		g.drawString("Fidgy-Rubiks", 150, 300);
+		//Loading Bar Place holder//
+		g.drawRect(330, 200, 150, 20);
+
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 30)); 
+		g.drawString("Loading...",350,195);
 		
 		
 		
