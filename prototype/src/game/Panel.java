@@ -55,9 +55,12 @@ public class Panel extends JPanel implements KeyListener {
 		//drawSplashPage(g);
 		SecondScreen(g);
 	}
+	
+	
 	public void SecondScreen(Graphics g) {
 		//Rubiks Cube Menu//
 		
+		//Solve Mode//
 		g.setColor(Color.red);
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 50)); 
 		g.drawString("Game Mode", 230, 50 );
@@ -70,6 +73,7 @@ public class Panel extends JPanel implements KeyListener {
 		
 		g.drawString("Profesional", 300, 350);
 		
+		//Shopping Cart and Menu Bar//
 		g.drawImage(new ImageIcon("src/pictures/Shopping Cart 2.png").getImage(), 650, 10, 200, 100, null);
 		g.drawImage(new ImageIcon("src/pictures/Menu Bar.png").getImage(), -50, 0, 150, 100, null);
 		
@@ -77,6 +81,8 @@ public class Panel extends JPanel implements KeyListener {
 	}
 	
 
+	
+	
 	@Override
 	public void keyPressed(KeyEvent k) {
 	}
