@@ -19,13 +19,14 @@ import javax.swing.JPanel;
 
 public class Panel extends JPanel implements KeyListener {
 
+	String screenTracker;
 	
 	public Panel() {
 		addKeyListener(this);
 		setBackground(new Color(0, 0, 0));
 		setDoubleBuffered(true);
 		setFocusable(true);
-		
+		screenTracker = "title_screen";
 		repaint();
 		
 	}
@@ -52,8 +53,14 @@ public class Panel extends JPanel implements KeyListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
-		//drawSplashPage(g);
-		SecondScreen(g);
+		if (screenTracker.contentEquals("title_screen"))
+			drawSplashPage(g);
+		else
+			SecondScreen(g);
+		
+		drawSplashPage(g);
+		
+		ThirdScreen(g);
 	}
 	
 	
@@ -76,6 +83,19 @@ public class Panel extends JPanel implements KeyListener {
 		//Shopping Cart and Menu Bar//
 		g.drawImage(new ImageIcon("src/pictures/Shopping Cart 2.png").getImage(), 650, 10, 200, 100, null);
 		g.drawImage(new ImageIcon("src/pictures/Menu Bar.png").getImage(), -50, 0, 150, 100, null);
+	}
+		
+	public void ThirdScreen(Graphics g) {
+		
+		//Easy Mode//
+		g.setColor(Color.red);
+		g.setFont(new Font("TimesRoman", Font.PLAIN,30));
+		
+		
+		
+		
+		
+		
 		
 		
 	}
@@ -85,6 +105,11 @@ public class Panel extends JPanel implements KeyListener {
 	
 	@Override
 	public void keyPressed(KeyEvent k) {
+		if(k.getKeyCode()==KeyEvent.VK_SPACE)
+		screenTracker="Selection_creeen";
+			
+			
+			
 	}
 
 	@Override
