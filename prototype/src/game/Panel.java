@@ -64,11 +64,11 @@ public class Panel extends JPanel implements KeyListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
-		if (screenTracker.contentEquals("title_screen"))
-			drawSplashPage(g);
-		else
-			SecondScreen(g);
-			//ThirdScreen(g);
+		//if (screenTracker.contentEquals("title_screen"))
+			//drawSplashPage(g);
+		//else
+			//SecondScreen(g);
+			ThirdScreen(g);
 		    
 		
 		
@@ -86,7 +86,7 @@ public class Panel extends JPanel implements KeyListener {
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 30)); 
 		//////////////////////////////////////////////
 		g.drawString("Beginner", 300, 150);
-		
+		//g.drawString(str, x, y);//
 		g.drawString("Intermediate", 300, 250);
 		
 		g.drawString("Profesional", 300, 350);
@@ -95,20 +95,21 @@ public class Panel extends JPanel implements KeyListener {
 		g.drawImage(new ImageIcon("src/pictures/Shopping Cart 2.png").getImage(), 650, 10, 100, 100, null);
 		g.drawImage(new ImageIcon("src/pictures/Menu Bar.png").getImage(), -50, 0, 150, 100, null);
 		//////////////////////////////////////////////
-		g.drawRect(300, 350, 100, 100);
-		
-		
-		
 		
 	}
 		
 	public void ThirdScreen(Graphics g) {
 		
-		//Easy Mode//
+		//Level section//
 		g.setColor(Color.blue);
+		g.setFont(new Font("TimesRoman",Font.BOLD,30));
+		g.drawString("Level Selection", 300, 50);
+		
 		g.setFont(new Font("TimesRoman", Font.PLAIN,30));
-		
-		
+		g.drawString("Level 1", 350, 150);
+		g.draw3DRect(350, , 250, 100, null);
+		g.drawString("Level 2", 350, 350);
+		g.drawString("Level 3", 350, 550);
 		
 		
 		
