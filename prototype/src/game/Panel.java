@@ -7,6 +7,8 @@ import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +19,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-public class Panel extends JPanel implements KeyListener {
+public class Panel extends JPanel implements KeyListener,MouseListener {
 
 	
 	///////////////////////////////////////////////////
@@ -33,6 +35,7 @@ public class Panel extends JPanel implements KeyListener {
 	
 	public Panel() {
 		addKeyListener(this);
+		addMouseListener(this);
 		setBackground(new Color(247, 146, 69));
 		setDoubleBuffered(true);
 		setFocusable(true);
@@ -46,7 +49,7 @@ public class Panel extends JPanel implements KeyListener {
 		repaint();
 	}
 	
-	public void drawSplashPage(Graphics g) {
+	public void Title(Graphics g) {
 		//Title Screen//
 		g.setColor(Color.blue);
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 90)); 
@@ -64,12 +67,12 @@ public class Panel extends JPanel implements KeyListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
-		//if (screenTracker.contentEquals("title_screen"))
-			//drawSplashPage(g);
-		//else
+		if (screenTracker.contentEquals("title_screen"))
+			Title(g);
+		else
 			//SecondScreen(g);
 			ThirdScreen(g);
-		    
+		
 		
 		
 	}
@@ -107,7 +110,15 @@ public class Panel extends JPanel implements KeyListener {
 		
 		g.setFont(new Font("TimesRoman", Font.PLAIN,30));
 		g.drawString("Level 1", 350, 150);
-		g.draw3DRect(350, , 250, 100, null);
+		//Cube//
+		//g.draw3DRect(x, y, width, height, raised);
+		//g.drawLine(x1, y1, x2, y2);
+		
+		g.drawLine(350, 175, 500, 141);
+		
+		g.drawLine(500, 175, 0, 0);
+		g.draw3DRect(350, 175, 150, 150, true);
+		
 		g.drawString("Level 2", 350, 350);
 		g.drawString("Level 3", 350, 550);
 		
@@ -118,7 +129,10 @@ public class Panel extends JPanel implements KeyListener {
 		
 	}
 	
-
+	
+	
+	
+	
 	
 	
 	@Override
@@ -138,5 +152,35 @@ public class Panel extends JPanel implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent arg0) {}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+			System.out.println(e.getLocationOnScreen());
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
