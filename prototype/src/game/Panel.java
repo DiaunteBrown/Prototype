@@ -116,7 +116,7 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 		
 		g.drawLine(350, 175, 500, 141);
 		
-		g.drawLine(500, 175, 0, 0);
+		g.drawLine(500, 175, 150, 0);
 		g.draw3DRect(350, 175, 150, 150, true);
 		
 		g.drawString("Level 2", 350, 350);
