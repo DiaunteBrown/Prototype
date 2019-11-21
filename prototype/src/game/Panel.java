@@ -67,9 +67,9 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
-		if (screenTracker.contentEquals("title_screen"))
-			Title(g);
-		else
+		//if (screenTracker.contentEquals("title_screen"))
+			//Title(g);
+		//else
 			//SecondScreen(g);
 			ThirdScreen(g);
 		
@@ -111,20 +111,19 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 		g.setFont(new Font("TimesRoman", Font.PLAIN,30));
 		g.drawString("Level 1", 350, 150);
 		//Cube//
-		//g.draw3DRect(x, y, width, height, raised);
-		//g.drawLine(x1, y1, x2, y2);
-		
-		g.drawLine(350, 175, 500, 141);
-		
-		g.drawLine(500, 175, 150, 0);
-		g.draw3DRect(350, 175, 150, 150, true);
-		
+		g.drawImage(new ImageIcon("src/pictures/Cube.png").getImage(), 330, 200, 100, 100, null);
+		//Cube//
 		g.drawString("Level 2", 350, 350);
+		g.drawImage(new ImageIcon("src/pictures/Level 2 cube.png").getImage(), 330, 400, 100, 100, null);
+		//Cube2//
+		
 		g.drawString("Level 3", 350, 550);
+		g.drawImage(new ImageIcon("src/pictures/Level 3 cube.png").getImage(), 330, 600, 100, 100, null);
 		
-		
-		
-		
+		//Back//
+		g.draw3DRect(0, 0, 110, 30, false);
+		g.drawString("Back", 20, 25);
+		g.drawImage(new ImageIcon("src/pictures/Setting.png").getImage(), 0, 650, 50, 50, null);
 		
 		
 	}
