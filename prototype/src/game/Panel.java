@@ -26,7 +26,7 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 	
 	
 	String screenTracker;
-	String[] Screen = {"Title_screen","selection_screen"};
+	String[] Screen = {"Title_screen","selection_screen","easy_mode"};
 	int screenListIndex=0;
 	
 	
@@ -61,17 +61,26 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 		//Loading//
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 30)); 
 		g.drawString("Loading...",350,350);
+		////Settings////
+		g.drawImage(new ImageIcon("src/pictures/Setting.png").getImage(), 0, 650, 50, 50, null);
+		////////////////
 	}
 	
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		////////////////////////////////////////////////
+		if (screenTracker.contentEquals("title_screen"))
+			Title(g);
+		else
+			SecondScreen(g);
 		
-		//if (screenTracker.contentEquals("title_screen"))
-			//Title(g);
-		//else
-			//SecondScreen(g);
-			ThirdScreen(g);
+		////////////////////////////////////////////////
+		if (screenTracker.contentEquals("easy_mode"))
+			LevelSection(g);
+		else
+			Level_1(g);
+		////////////////////////////////////////////////
 		
 		
 		
@@ -97,11 +106,12 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 		//Shopping Cart and Menu Bar//
 		g.drawImage(new ImageIcon("src/pictures/Shopping Cart 2.png").getImage(), 650, 10, 100, 100, null);
 		g.drawImage(new ImageIcon("src/pictures/Menu Bar.png").getImage(), -50, 0, 150, 100, null);
+		g.drawImage(new ImageIcon("src/pictures/Setting.png").getImage(), 0, 650, 50, 50, null);
 		//////////////////////////////////////////////
 		
 	}
 		
-	public void ThirdScreen(Graphics g) {
+	public void LevelSection(Graphics g) {
 		
 		//Level section//
 		g.setColor(Color.blue);
@@ -128,6 +138,11 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 		
 	}
 	
+	public void Level_1(Graphics g) {
+		//Level 1///
+		
+		//level1//
+	}
 	
 	
 	
@@ -161,7 +176,7 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 			System.out.println(e.getLocationOnScreen());
-		
+			
 	}
 
 	@Override
