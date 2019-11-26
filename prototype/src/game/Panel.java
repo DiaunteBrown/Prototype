@@ -157,7 +157,7 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 		if(screenListIndex==Screen.length)
 			screenListIndex=0;
 		screenTracker=Screen[screenListIndex];
-			
+		
 			
 	}
 
@@ -169,14 +169,18 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 			System.out.println(e.getLocationOnScreen());
+			if (e.getPoint().x>0 && e.getPoint().x<500)
+				title_screen
+				
 			
+			if(e.getPoint().y>100 && e.getPoint().y<500);
 	}
 
 	@Override
