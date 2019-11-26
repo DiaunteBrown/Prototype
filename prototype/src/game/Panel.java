@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -17,6 +18,7 @@ import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Panel extends JPanel implements KeyListener,MouseListener {
@@ -28,7 +30,9 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 	String screenTracker;
 	String[] Screen = {"Title_screen","selection_screen","easy_mode"};
 	int screenListIndex=0;
-	
+	///////////////////////////////////////////////////////
+	String screenTracker2;
+	String[] Screen2 = {"Level 1", "Level 2"};
 	
 	
 	///////////////////////////////////////////////////
@@ -72,14 +76,13 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 		////////////////////////////////////////////////
 		if (screenTracker.contentEquals("title_screen"))
 			Title(g);
-		else
-			SecondScreen(g);
 		
+		if (screenTracker.contentEquals("selection_screen"))
+			SecondScreen(g);
+			
 		////////////////////////////////////////////////
 		if (screenTracker.contentEquals("easy_mode"))
 			LevelSection(g);
-		else
-			Level_1(g);
 		////////////////////////////////////////////////
 		
 		
@@ -136,6 +139,8 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 		g.drawImage(new ImageIcon("src/pictures/Setting.png").getImage(), 0, 650, 50, 50, null);
 		
 		
+		g.drawRect(350, 160, 100, 100);
+		
 	}
 	
 	public void Level_1(Graphics g) {
@@ -144,7 +149,16 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 		//level1//
 	}
 	
+	//////////////////////////////////
 	
+	
+	
+	
+	
+	
+	
+	
+	/////////////////////////////
 	
 	
 	
@@ -155,9 +169,14 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 		//screenTracker="Selection_screen";
 		screenListIndex++;
 		if(screenListIndex==Screen.length)
-			screenListIndex=0;
+			screenListIndex=2;
 		screenTracker=Screen[screenListIndex];
-		
+		////////////////////////
+		if (k.getKeyCode()==KeyEvent.VK_1)
+			screenListIndex++;
+		if (screenListIndex==Screen2.length)
+			screenListIndex=0;
+		screenTracker2=Screen[screenListIndex];
 			
 	}
 
@@ -176,11 +195,14 @@ public class Panel extends JPanel implements KeyListener,MouseListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 			System.out.println(e.getLocationOnScreen());
-			if (e.getPoint().x>0 && e.getPoint().x<500)
-				title_screen
-				
+			System.out.println(e.getButton());
+		Rectangle rectangle = new Rectangle(350,150, 300, 100);
+		if (rectangle.contains(e.getPoint()))  {
+			screenTracker=Screen[screenListIndex];
 			
-			if(e.getPoint().y>100 && e.getPoint().y<500);
+			
+		}
+				
 	}
 
 	@Override
